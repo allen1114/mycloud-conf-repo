@@ -8,7 +8,10 @@ spring:
       client:
         username: root
         password: root
-
+        instance:
+          metadata:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
