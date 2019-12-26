@@ -10,3 +10,5 @@
 #            user.name: "root"
 #            user.password: "root"
 #
+
+profile: default
