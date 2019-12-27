@@ -3,28 +3,31 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.8.RELEASE</version>
-        <relativePath/>
-    </parent>
-
-    <groupId>com.allencai.mypaascloud.conf</groupId>
-    <artifactId>mypaascloud-conf</artifactId>
+    <groupId>com.allencai.mycloud.conf</groupId>
+    <artifactId>mycloud-conf</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <spring.boot.version>2.0.8.RELEASE</spring.boot.version>
         <spring.boot.admin.version>2.0.5</spring.boot.admin.version>
+        <spring.platform.version>Cairo-SR7</spring.platform.version>
+        <spring.cloud.version>Finchley.SR4</spring.cloud.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>Cairo-SR7</version>
+                <version>${spring.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -32,7 +35,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.SR4</version>
+                <version>${spring.cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -42,6 +45,7 @@
                 <artifactId>spring-boot-admin-starter-client</artifactId>
                 <version>${spring.boot.admin.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-server</artifactId>
@@ -94,6 +98,11 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
 
     </dependencies>

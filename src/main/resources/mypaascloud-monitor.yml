@@ -1,8 +1,0 @@
-server:
-  port: 7979
-
-spring:
-  boot:
-    admin:
-      discovery:
-        enabled: true

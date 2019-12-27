@@ -1,4 +1,4 @@
-package com.mypaascloud.conf.repo;
+package com.mycloud.conf.repo;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

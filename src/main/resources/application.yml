@@ -3,6 +3,7 @@ spring:
     user:
       name: root
       password: root
+      roles: root
   boot:
     admin:
       client:
