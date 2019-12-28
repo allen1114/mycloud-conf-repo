@@ -13,6 +13,14 @@ spring:
           metadata:
             user.name: ${spring.security.user.name}
             user.password: ${spring.security.user.password}
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    discovery-client-enabled: true
+    base-url: mycloud-zipkin
+    sender:
+      type: web
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
