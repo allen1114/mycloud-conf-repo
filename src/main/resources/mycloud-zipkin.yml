@@ -6,3 +6,11 @@ management:
     web:
       server:
         auto-time-requests: false
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 192.168.1.88:5672
+      username: guest
+      password: guest
+      queue: zipkin
