@@ -1,6 +1,25 @@
 server:
   port: 7803
 
+spring:
+  security:
+    user:
+      name: root
+      password: root
+  boot:
+    admin:
+      client:
+        instance:
+          metadata:
+            user.name: ${spring.security.user.name}
+            user.password: ${spring.security.user.password}
+
+eureka:
+  instance:
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
 management:
   metrics:
     web:

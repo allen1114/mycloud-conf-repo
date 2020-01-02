@@ -1,18 +1,9 @@
 spring:
-  security:
-    user:
-      name: root
-      password: root
-      roles: root
   boot:
     admin:
       client:
         username: root
         password: root
-        instance:
-          metadata:
-            user.name: ${spring.security.user.name}
-            user.password: ${spring.security.user.password}
   sleuth:
     sampler:
       probability: 1.0
@@ -33,9 +24,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
     prefer-ip-address: true
-    metadata-map:
-      user.name: ${spring.security.user.name}
-      user.password: ${spring.security.user.password}
 
 management:
   endpoints:
