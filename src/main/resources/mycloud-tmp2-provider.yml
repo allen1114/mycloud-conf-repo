@@ -1,2 +1,13 @@
 server:
   port: 7902
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.1.88:3306/mycloud_tmp2
+      username: root
+      password: root.hunter
+      stat-view-servlet:
+        enabled: true
+      filters: mergeStat
+      use-global-data-source-stat: true
