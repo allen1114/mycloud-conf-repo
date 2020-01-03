@@ -9,6 +9,5 @@ spring:
       password: root.hunter
       stat-view-servlet:
         enabled: true
-        allow: *
       filters: mergeStat
       use-global-data-source-stat: true
