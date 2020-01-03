@@ -2,20 +2,13 @@ server:
   port: 7901
 
 spring:
-  security:
-    user:
-      name: root
-      password: root
-  boot:
-    admin:
-      client:
-        instance:
-          metadata:
-            user.name: ${spring.security.user.name}
-            user.password: ${spring.security.user.password}
-
-eureka:
-  instance:
-    metadata-map:
-      user.name: ${spring.security.user.name}
-      user.password: ${spring.security.user.password}
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.1.88:3306/mycloud_tmp1
+      username: root
+      password: root.hunter
+      stat-view-servlet:
+        enabled: true
+        allow: *
+      filters: mergeStat
+      use-global-data-source-stat: true
