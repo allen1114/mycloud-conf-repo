@@ -10,10 +10,12 @@
     <properties>
         <spring.boot.version>2.0.8.RELEASE</spring.boot.version>
         <spring.boot.admin.version>2.0.5</spring.boot.admin.version>
-        <spring.platform.version>Cairo-SR7</spring.platform.version>
+        <spring.platform.version>Cairo-SR8</spring.platform.version>
         <spring.cloud.version>Finchley.SR3</spring.cloud.version>
         <zipkin.version>2.11.7</zipkin.version>
         <druid.version>1.1.21</druid.version>
+        <spring-cloud-alibaba.version>2.0.0.RELEASE</spring-cloud-alibaba.version>
+        <seata.version>1.0.0</seata.version>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +70,25 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-seata</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.allencai.mycloud.common</groupId>
+                <artifactId>mycloud-seata-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
@@ -156,6 +177,17 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-seata</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.allencai.mycloud.common</groupId>
+            <artifactId>mycloud-seata-server</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>
