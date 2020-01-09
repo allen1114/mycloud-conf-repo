@@ -1,6 +1,9 @@
 server:
   port: 7804
 seata:
+  server:
+    enabled: true
+    port: 8091
   registry:
     type: eureka
     eureka:

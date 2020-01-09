@@ -11,3 +11,4 @@ spring:
         enabled: true
       filters: mergeStat
       use-global-data-source-stat: true
+

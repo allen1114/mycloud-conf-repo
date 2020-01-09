@@ -8,14 +8,14 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <spring.boot.version>2.0.8.RELEASE</spring.boot.version>
-        <spring.boot.admin.version>2.0.5</spring.boot.admin.version>
-        <spring.platform.version>Cairo-SR8</spring.platform.version>
-        <spring.cloud.version>Finchley.SR3</spring.cloud.version>
+        <platform-bom.version>Cairo-SR7</platform-bom.version>
+        <spring-cloud.version>Finchley.SR4</spring-cloud.version>
+        <spring-boot-admin.version>2.0.6</spring-boot-admin.version>
         <zipkin.version>2.11.7</zipkin.version>
         <druid.version>1.1.21</druid.version>
-        <spring-cloud-alibaba.version>2.0.0.RELEASE</spring-cloud-alibaba.version>
+        <mybatis-plus.version>3.0.4</mybatis-plus.version>
         <seata.version>1.0.0</seata.version>
+        <spring-cloud-alibaba.version>2.0.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -24,7 +24,7 @@
             <dependency>
                 <groupId>io.spring.platform</groupId>
                 <artifactId>platform-bom</artifactId>
-                <version>${spring.platform.version}</version>
+                <version>${platform-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -32,7 +32,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud.version}</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -40,19 +40,21 @@
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
-                <version>${spring.boot.admin.version}</version>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-server</artifactId>
-                <version>${spring.boot.admin.version}</version>
+                <version>${spring-boot-admin.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>io.zipkin.java</groupId>
                 <artifactId>zipkin-autoconfigure-ui</artifactId>
                 <version>${zipkin.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>io.zipkin.java</groupId>
                 <artifactId>zipkin-server</artifactId>
@@ -72,9 +74,9 @@
             </dependency>
 
             <dependency>
-                <groupId>io.seata</groupId>
-                <artifactId>seata-spring-boot-starter</artifactId>
-                <version>${seata.version}</version>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
             </dependency>
 
             <dependency>
@@ -84,14 +86,54 @@
             </dependency>
 
             <dependency>
-                <groupId>com.allencai.mycloud.common</groupId>
-                <artifactId>mycloud-seata-server</artifactId>
-                <version>${project.version}</version>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-all</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-spring-boot-starter</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-server</artifactId>
+                <version>${seata.version}</version>
             </dependency>
 
 
+            <!-- ################################# domain api start ############################################# -->
+
+            <dependency>
+                <groupId>com.allencai.mycloud.common</groupId>
+                <artifactId>mycloud-spring-boot-starter-seata</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.allencai.mycloud.domain</groupId>
+                <artifactId>mycloud-tmp1-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.allencai.mycloud.domain</groupId>
+                <artifactId>mycloud-tmp2-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.allencai.mycloud.domain</groupId>
+                <artifactId>mycloud-tmp3-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- ################################# domain api end ############################################# -->
         </dependencies>
     </dependencyManagement>
+
 
     <dependencies>
         <dependency>
@@ -185,8 +227,9 @@
 
         <dependency>
             <groupId>com.allencai.mycloud.common</groupId>
-            <artifactId>mycloud-seata-server</artifactId>
+            <artifactId>mycloud-spring-boot-starter-seata</artifactId>
         </dependency>
+
 
     </dependencies>
 
