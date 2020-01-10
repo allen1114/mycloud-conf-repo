@@ -34,7 +34,7 @@ seata:
       user: root
       password: root.hunter
   service:
-    vgroup_mapping.mycloud-tx-group: mycloud-seata-tc
+    vgroup_mapping.mycloud-tx-group: default
     disableGlobalTransaction: false
     enableDegrade: false
-    mycloud-seata-tc.grouplist: 127.0.0.1:8091
+    default.grouplist: 127.0.0.1:8091
