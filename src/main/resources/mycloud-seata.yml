@@ -1,7 +1,7 @@
 server:
   port: 7804
 seata:
-  server:
+  initiator:
     enabled: true
     port: 8091
   registry:

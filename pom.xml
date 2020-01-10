@@ -103,14 +103,22 @@
                 <version>${seata.version}</version>
             </dependency>
 
-
-            <!-- ################################# domain api start ############################################# -->
+            <!-- ################################# common start ############################################# -->
 
             <dependency>
                 <groupId>com.allencai.mycloud.common</groupId>
-                <artifactId>mycloud-spring-boot-starter-seata</artifactId>
+                <artifactId>mycloud-seata-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.allencai.mycloud.common</groupId>
+                <artifactId>mycloud-seata-initiator</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <!-- ################################# domain api start ############################################# -->
 
             <dependency>
                 <groupId>com.allencai.mycloud.domain</groupId>
@@ -227,7 +235,12 @@
 
         <dependency>
             <groupId>com.allencai.mycloud.common</groupId>
-            <artifactId>mycloud-spring-boot-starter-seata</artifactId>
+            <artifactId>mycloud-seata-initiator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.allencai.mycloud.common</groupId>
+            <artifactId>mycloud-seata-config</artifactId>
         </dependency>
 
 

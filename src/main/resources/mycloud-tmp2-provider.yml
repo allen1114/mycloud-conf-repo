@@ -11,20 +11,20 @@ spring:
         enabled: true
       filters: mergeStat
       use-global-data-source-stat: true
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: mycloud-tx-group
 
 
 seata:
   client:
-    enabled: true
-    application-id: ${spting.application.name}
-    tx-service-group: mycloud-tx-group
     undo:
       log-table: undo_log
   registry:
     type: eureka
     eureka:
       service-url: http://localhost:8761/eureka
-      application: ${spting.application.name}
   store:
     mode: db
     db:
@@ -38,4 +38,4 @@ seata:
     vgroup_mapping.mycloud-tx-group: mycloud-seata
     disableGlobalTransaction: false
     enableDegrade: false
-    default.grouplist: 127.0.0.1:8091
+    mycloud-seata.grouplist: 127.0.0.1:8091
