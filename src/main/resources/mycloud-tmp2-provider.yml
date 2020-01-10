@@ -22,9 +22,9 @@ seata:
     undo:
       log-table: undo_log
   registry:
-    type: eureka
-    eureka:
-      service-url: http://localhost:8761/eureka
+    type: file
+#    eureka:
+#      service-url: http://localhost:8761/eureka
   store:
     mode: db
     db:

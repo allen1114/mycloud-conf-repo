@@ -5,10 +5,10 @@ seata:
     enabled: true
     port: 8091
   registry:
-    type: eureka
-    eureka:
-      service-url: http://localhost:8761/eureka
-      application: default
+    type: file
+#    eureka:
+#      service-url: http://localhost:8761/eureka
+#      application: default
   store:
     mode: db
     db:
@@ -21,3 +21,7 @@ seata:
       global-table: global_table
       branch-table: branch_table
       lock-table: lock_table
+  service:
+    vgroup_mapping.my_test_tx_group: "default"
+    default.grouplist: "127.0.0.1:8091"
+    disableGlobalTransaction: false
