@@ -8,7 +8,7 @@ seata:
     type: eureka
     eureka:
       service-url: http://localhost:8761/eureka
-      application: mycloud-seata
+      application: mycloud-seata-tc
   store:
     mode: db
     db:
